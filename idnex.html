@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Bilardo | Menü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f0f0f;
+            --surface: #1a1a1a;
+            --accent: #27ae60; /* Klasik Bilardo Yeşili */
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --border-color: #333;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-area h1 {
+            font-weight: 600;
+            letter-spacing: 5px;
+            margin: 0;
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        .logo-area span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            height: 2px;
+            width: 50px;
+            background: var(--accent);
+            margin: 20px auto;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 15px;
+        }
+
+        .menu-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .menu-item {
+            background: var(--surface);
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:active {
+            transform: scale(0.98);
+            border-color: var(--accent);
+        }
+
+        .item-details .name {
+            display: block;
+            font-weight: 400;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .item-details .desc {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .price {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 40px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+
+        /* Akıcı açılış animasyonu */
+        .menu-item {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-area">
+            <h1>FOCUS</h1>
+            <span>BİLARDO & SALON</span>
+        </div>
+        <div class="divider"></div>
+    </header>
+
+    <section class="category-section">
+        <div class="category-title">Atıştırmalıklar</div>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-details"><span class="name">Popkek Çeşitleri</span><span class="desc">Vişne, Hindistan Cevizi, Bitter, Muz</span></div><div class="price">40 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Dankek Pöti Çeşitleri</span><span class="desc">Hindistan Cevizi, Çikolata</span></div><div class="price">40 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">8Kek Çeşitleri</span><span class="desc">Çikolata, Orman Meyveli</span></div><div class="price">40 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Hanımeller Çeşitleri</span><span class="desc">Klasik, Fındıklı</span></div><div class="price">40 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Çikolata & Gofret</span><span class="desc">Today Dubai Çikolata, Albeni, Çokonat, Metro, Dido, Nutymax, Damak, Canpare</span></div><div class="price">40 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Bisküvi & Tuzlu</span><span class="desc">İkram, Biskrem, Çizi, Kekstra</span></div><div class="price">40 TL</div></div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <div class="category-title">Soğuk İçecekler</div>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-details"><span class="name">Kutu İçecekler</span><span class="desc">Cola, Fanta, Niğde Gazozu</span></div><div class="price">50 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Fuse Tea Çeşitleri</span><span class="desc">Karpuz, Mango</span></div><div class="price">50 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Meyveli Sodalar</span><span class="desc">Beypazarı Limon, Mango Ananas, Karadut, Elma</span></div><div class="price">50 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Soğuk Kahveler (My Coffee)</span><span class="desc">Caramel, Mocha, Original</span></div><div class="price">50 TL</div></div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <div class="category-title">Enerji & Kahve</div>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-details"><span class="name">Enerji İçecekleri</span><span class="desc">Red Bull, Monster Energy, Monster Doctor</span></div><div class="price">70 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Sıcak Kahveler</span><span class="desc">Espresso, Americano, Cappuccino, Flat White, Mocha, Macchiato</span></div><div class="price">70 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Sıcak İçecekler</span><span class="desc">Sıcak Çikolata, Sıcak Süt</span></div><div class="price">70 TL</div></div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <div class="category-title">Diğer</div>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-details"><span class="name">Çay</span><span class="desc">Taze demlenmiş</span></div><div class="price">10 TL</div></div>
+            <div class="menu-item"><div class="item-details"><span class="name">Su & Sade Soda</span><span class="desc">Hamidiye Su, Beypazarı Sade Soda</span></div><div class="price">10 TL</div></div>
+        </div>
+    </section>
+
+    <footer>
+        FOCUS BİLARDO AFİYET OLSUN
+    </footer>
+</div>
+
+</body>
+</html>
