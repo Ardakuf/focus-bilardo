@@ -21,7 +21,7 @@
         .loaded #splash { transform: translateY(-100%); }
 
         header { text-align: center; padding: 40px 20px; }
-        .logo-text { font-weight: 800; font-size: 2.2rem; letter-spacing: -1px; }
+        .logo-text { font-weight: 800; font-size: 2.2rem; letter-spacing: -1px; margin: 0; }
         .logo-text span { color: var(--red); }
 
         /* WIFI KARTI */
@@ -31,26 +31,26 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* LİSTE YAPISI (Aşağı doğru uzanan) */
+        /* DİKEY LİSTE YAPISI (Senin istediğin o aşağı uzanan şık hal) */
         .category { padding: 20px; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; }
-        .menu-list { padding: 0 20px; }
+        .menu-list { padding: 0 20px; display: flex; flex-direction: column; gap: 15px; }
+        
         .item { 
-            background: var(--surface); margin-bottom: 15px; padding: 12px; 
+            background: var(--surface); padding: 12px; 
             border-radius: 15px; display: flex; align-items: center; gap: 15px;
             border: 1px solid #222;
         }
         
-        /* GÖRSEL BOYUTU */
+        /* GÖRSELLER */
         .item-img {
             width: 85px; height: 85px; border-radius: 12px;
-            object-fit: cover; border: 1px solid #333;
-            background: #222; /* Resim yüklenmezse boş kalmasın */
+            object-fit: cover; border: 1px solid #333; background: #222;
         }
 
         .item-info { flex: 1; }
-        .item-name { font-weight: 600; font-size: 1rem; display: block; margin-bottom: 4px; }
-        .item-desc { font-size: 0.75rem; color: var(--gray); line-height: 1.3; }
-        .price { font-weight: 800; color: var(--red); font-size: 1.2rem; margin-left: 10px; }
+        .item-name { font-weight: 600; font-size: 0.95rem; display: block; margin-bottom: 4px; }
+        .item-desc { font-size: 0.7rem; color: var(--gray); line-height: 1.2; }
+        .price { font-weight: 800; color: var(--red); font-size: 1.2rem; margin-left: 5px; }
 
         .insta-btn {
             display: flex; align-items: center; justify-content: center;
@@ -66,7 +66,7 @@
 
     <div id="splash">
         <div class="logo-text">FOCUS <span>BİLARDO</span></div>
-        <button onclick="document.body.classList.add('loaded')" style="margin-top:30px; padding: 15px 40px; border-radius: 50px; border: none; font-weight: 800; background: #fff; cursor: pointer;">MENÜYÜ GÖR</button>
+        <button onclick="document.body.classList.add('loaded')" style="margin-top:40px; padding: 15px 40px; border-radius: 50px; border: none; font-weight: 800; background: #fff; cursor: pointer;">MENÜYÜ AÇ</button>
     </div>
 
     <header><div class="logo-text">FOCUS <span>BİLARDO</span></div></header>
@@ -76,29 +76,25 @@
         <div style="font-size: 1.5rem;">📶</div>
     </div>
 
-    <div class="category">Atıştırmalıklar</div>
+    <div class="category">Menü</div>
     <div class="menu-list">
         <div class="item">
-            <img src="kek.jpg" class="item-img" alt="Kek">
-            <div class="item-info"><span class="item-name">Popkek & Kekler</span><span class="item-desc">Vişne, Bitter, Muz, 8Kek</span></div>
+            <div class="item-img" style="background-image: url('Gemini_Generated_Image_p16d8mp16d8mp16d.jpg'); background-size: cover;"></div>
+            <div class="item-info"><span class="item-name">Popkek & Kekler</span><span class="item-desc">Vişne, Bitter, Muz</span></div>
             <div class="price">40₺</div>
         </div>
         <div class="item">
-            <img src="biskuvi.jpg" class="item-img" alt="Bisküvi">
-            <div class="item-info"><span class="item-name">Hanımeller & Bisküvi</span><span class="item-desc">Klasik, Fındıklı, Biskrem</span></div>
+            <div class="item-img" style="background-image: url('Gemini_Generated_Image_8bxpea8bxpea8bxp.jpg'); background-size: cover;"></div>
+            <div class="item-info"><span class="item-name">Hanımeller & Bisküvi</span><span class="item-desc">Klasik, Fındıklı</span></div>
             <div class="price">40₺</div>
         </div>
-    </div>
-
-    <div class="category">İçecekler</div>
-    <div class="menu-list">
         <div class="item">
-            <img src="kutu-icecek.jpg" class="item-img" alt="Kutu">
-            <div class="item-info"><span class="item-name">Kutu İçecekler</span><span class="item-desc">Cola, Fanta, Fuse Tea</span></div>
+            <div class="item-img" style="background-image: url('Gemini_Generated_Image_cuqrhcuqrhcuqrhc.jpg'); background-size: cover;"></div>
+            <div class="item-info"><span class="item-name">Kutu İçecekler</span><span class="item-desc">Cola, Fanta, Sprite</span></div>
             <div class="price">50₺</div>
         </div>
         <div class="item">
-            <img src="enerji.jpg" class="item-img" alt="Enerji">
+            <div class="item-img" style="background-image: url('Gemini_Generated_Image_4t1wu24t1wu24t1w.jpg'); background-size: cover;"></div>
             <div class="item-info"><span class="item-name">Enerji İçeceği</span><span class="item-desc">Red Bull, Monster</span></div>
             <div class="price">70₺</div>
         </div>
