@@ -3,90 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Bilardo | Menü</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Focus Bilardo | Premium Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0f0f0f;
-            --surface: #1a1a1a;
-            --accent: #d32f2f; /* Logo rengine uygun kırmızı */
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
-        }
-
+        :root { --red: #e63946; --dark: #0a0a0a; --surface: #161616; --white: #ffffff; --gray: #a0a0a0; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-primary); margin: 0; padding-bottom: 50px; }
+        body { margin: 0; background: var(--dark); color: var(--white); font-family: 'Montserrat', sans-serif; }
 
-        header { 
-            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-            padding: 30px 20px; text-align: center; border-bottom: 2px solid var(--accent);
+        /* SPLASH SCREEN */
+        #splash {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            z-index: 9999; transition: transform 0.8s cubic-bezier(0.7,0,0.3,1);
+            border-bottom: 4px solid var(--red);
         }
-        .logo { max-width: 220px; height: auto; }
+        .loaded #splash { transform: translateY(-100%); }
 
-        .category-title { 
-            padding: 25px 20px 10px; font-weight: 800; font-size: 1.2rem; 
-            text-transform: uppercase; color: var(--accent); letter-spacing: 2px;
+        /* HEADER */
+        header { text-align: center; padding: 40px 20px; background: linear-gradient(to bottom, #1a1a1a, var(--dark)); }
+        .logo-text { font-weight: 800; font-size: 2rem; letter-spacing: -1px; }
+        .logo-text span { color: var(--red); }
+
+        /* WIFI CARD */
+        .wifi-box {
+            margin: 0 20px 30px; background: var(--surface); padding: 20px;
+            border-radius: 15px; border-left: 5px solid var(--red);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .wifi-box h3 { margin: 0; font-size: 1.1rem; letter-spacing: 1px; }
+        .wifi-box p { margin: 5px 0 0; color: var(--gray); font-size: 0.8rem; }
+
+        /* MENU ITEMS */
+        .category { padding: 20px; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+        .menu-list { padding: 0 20px; }
+        .item { 
+            background: var(--surface); margin-bottom: 15px; padding: 15px; 
+            border-radius: 12px; display: flex; align-items: center; gap: 15px;
+            border: 1px solid #222;
+        }
+        .item-img-placeholder {
+            width: 60px; height: 60px; background: #222; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; color: var(--red); font-weight: 800;
+        }
+        .item-info { flex: 1; }
+        .item-name { font-weight: 600; font-size: 0.9rem; display: block; }
+        .item-desc { font-size: 0.7rem; color: var(--gray); }
+        .price { font-weight: 800; color: var(--white); }
+
+        /* INSTAGRAM */
+        .insta-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            margin: 40px 20px; padding: 15px; border-radius: 50px;
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+            color: white; text-decoration: none; font-weight: 600;
         }
 
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; }
-
-        .menu-item { 
-            background: var(--surface); border-radius: 15px; overflow: hidden; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s;
-        }
-
-        .item-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
-        
-        .item-info { padding: 12px; }
-        .item-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; }
-        .item-price { color: var(--accent); font-weight: 800; font-size: 1.1rem; }
-
-        footer { text-align: center; padding: 30px; opacity: 0.5; font-size: 0.8rem; }
+        footer { text-align: center; padding: 30px; font-size: 0.7rem; color: #444; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="https://i.ibb.co/XfXGfVj/focus-logo.png" alt="Focus Bilardo" class="logo">
-</header>
+    <div id="splash">
+        <div class="logo-text">FOCUS <span>BİLARDO</span></div>
+        <p style="color:var(--gray); font-size:0.8rem; margin: 20px 0 40px;">SNOOKER & POOL CLUB</p>
+        <button onclick="document.body.classList.add('loaded')" style="padding: 15px 40px; border-radius: 50px; border: none; font-weight: 800; cursor: pointer;">GİRİŞ YAP</button>
+    </div>
 
-<div class="category-title">Atıştırmalıklar</div>
-<div class="menu-grid">
-    <div class="menu-item">
-        <img src="https://i.ibb.co/r2M3P0S/kek.jpg" class="item-img">
-        <div class="item-info"><div class="item-name">Popkek & Kek Çeşitleri</div><div class="item-price">₺40</div></div>
-    </div>
-    <div class="menu-item">
-        <img src="https://i.ibb.co/n7m7R0N/biskuvi.jpg" class="item-img">
-        <div class="item-info"><div class="item-name">Hanımeller & Bisküvi</div><div class="item-price">₺45</div></div>
-    </div>
-</div>
+    <header>
+        <div class="logo-text">FOCUS <span>BİLARDO</span></div>
+    </header>
 
-<div class="category-title">Soğuk İçecekler</div>
-<div class="menu-grid">
-    <div class="menu-item">
-        <img src="https://i.ibb.co/vXy0V8n/kutu-icecek.jpg" class="item-img">
-        <div class="item-info"><div class="item-name">Kutu İçecekler</div><div class="item-price">₺50</div></div>
+    <div class="wifi-box">
+        <div><p>Free Wi-Fi</p><h3>Focus2025</h3></div>
+        <div style="font-size: 1.5rem;">📶</div>
     </div>
-    <div class="menu-item">
-        <img src="https://i.ibb.co/WvM5GzP/enerji.jpg" class="item-img">
-        <div class="item-info"><div class="item-name">Enerji İçeceği</div><div class="item-price">₺80</div></div>
-    </div>
-</div>
 
-<div class="category-title">Sıcak İçecekler</div>
-<div class="menu-grid">
-    <div class="menu-item">
-        <img src="https://i.ibb.co/9G7C3Nq/kahve.jpg" class="item-img">
-        <div class="item-info"><div class="item-name">Filtre Kahve</div><div class="item-price">₺60</div></div>
+    <div class="category">Atıştırmalıklar</div>
+    <div class="menu-list">
+        <div class="item">
+            <div class="item-img-placeholder">🎱</div>
+            <div class="item-info"><span class="item-name">Popkek & Kekler</span><span class="item-desc">Vişne, Bitter, Muz, 8Kek</span></div>
+            <div class="price">40₺</div>
+        </div>
+        <div class="item">
+            <div class="item-img-placeholder">🎱</div>
+            <div class="item-info"><span class="item-name">Hanımeller & Bisküvi</span><span class="item-desc">Klasik, Fındıklı, Biskrem</span></div>
+            <div class="price">40₺</div>
+        </div>
     </div>
-    <div class="menu-item">
-        <img src="https://i.ibb.co/L9HqN7n/cay.jpg" class="item-img">
-        <div class="item-info"><div class="item-name">Demleme Çay</div><div class="item-price">₺20</div></div>
-    </div>
-</div>
 
-<footer>Focus Bilardo Snooker Club © 2026</footer>
+    <div class="category">İçecekler</div>
+    <div class="menu-list">
+        <div class="item">
+            <div class="item-img-placeholder">🥤</div>
+            <div class="item-info"><span class="item-name">Kutu İçecekler</span><span class="item-desc">Cola, Fanta, Fuse Tea</span></div>
+            <div class="price">50₺</div>
+        </div>
+        <div class="item">
+            <div class="item-img-placeholder">⚡</div>
+            <div class="item-info"><span class="item-name">Enerji İçeceği</span><span class="item-desc">Red Bull, Monster</span></div>
+            <div class="price">70₺</div>
+        </div>
+        <div class="item">
+            <div class="item-img-placeholder">☕</div>
+            <div class="item-info"><span class="item-name">Sıcak Kahveler</span><span class="item-desc">Espresso, Americano, Latte</span></div>
+            <div class="price">70₺</div>
+        </div>
+    </div>
+
+    <a href="https://www.instagram.com/focusbilardo/" class="insta-btn">
+        <span>Bizi Instagram'da Takip Edin</span>
+    </a>
+
+    <footer>
+        🚭 İÇERİDE SİGARA İÇMEK YASAKTIR<br><br>
+        FOCUS BİLARDO © 2026
+    </footer>
 
 </body>
 </html>
